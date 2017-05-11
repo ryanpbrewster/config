@@ -1,0 +1,6 @@
+[alias]
+	st = status
+  ci = commit
+[user]
+	name = Ryan P. Brewster
+	email = RyanPBrewster@gmail.com
