@@ -5,6 +5,6 @@
   name = Ryan P. Brewster
   email = RyanPBrewster@gmail.com
 [push]
-  default = simple
+  default = current
 [core]
   editor = vim
