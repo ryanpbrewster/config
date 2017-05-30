@@ -46,6 +46,9 @@ def vim(config, home):
     symlink(
             "{}/vim/vimrc".format(config),
             "{}/.vimrc".format(home))
+    symlink(
+            "{}/vim/colors".format(config),
+            "{}/.vim/colors".format(home))
 
 def main():
     global FLAGS

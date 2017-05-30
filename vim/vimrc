@@ -1,3 +1,8 @@
-set et
-set ts=2
-set sw=2
+set background=dark
+set expandtab
+set ruler
+set shiftwidth=2
+set tabstop=2
+
+syntax enable
+colorscheme solarized
