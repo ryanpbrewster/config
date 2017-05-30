@@ -101,7 +101,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+q reload
 # exit i3 (logs you out of your X session)
 
-bindsym $mod+Shift+e exec "i3lock --color=000000 --show-failed-attempts --dpms --inactivity-timeout=15"
+bindsym $mod+Shift+e exec "i3lock --color=000000 --show-failed-attempts --dpms"
 bindsym $mod+Shift+q exit
 
 # resize window (you can also use the mouse for that)
