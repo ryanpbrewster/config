@@ -35,7 +35,7 @@ def git(config, home):
 def i3(config, home):
     symlink(
             "{}/i3/config".format(config),
-            "{}/.config/i3".format(home))
+            "{}/.config/i3/config".format(home))
 
 def i3status(config, home):
     symlink(
