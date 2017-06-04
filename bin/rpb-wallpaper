@@ -1,0 +1,5 @@
+#!/bin/bash
+
+WALLPAPER=$(gsutil ls gs://ryanpbrewster/wallpapers | sort -R | head -1)
+gsutil cp $WALLPAPER /tmp/rpb-wallpaper
+feh --bg-scale /tmp/rpb-wallpaper
