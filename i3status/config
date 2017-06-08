@@ -20,7 +20,14 @@ volume master {
         mixer_idx = 0
 }
 
+order += "tztime utc"
+tztime utc {
+  format = "UTC %Y-%m-%d %H:%M:%S"
+  timezone = "Etc/UTC"
+}
+
 order += "tztime local"
 tztime local {
-  format = "%Y-%m-%d %H:%M:%S"
+  format = "PST %Y-%m-%d %H:%M:%S"
+  timezone = "America/Los_Angeles"
 }
