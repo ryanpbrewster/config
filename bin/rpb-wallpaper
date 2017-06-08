@@ -1,5 +1,10 @@
 #!/bin/bash
 
-WALLPAPER=$(gsutil ls gs://ryanpbrewster/wallpapers | sort -R | head -1)
+WALLPAPER_CACHE=/tmp/rpb-wallpaper-cache
+if ! [[ -e $WALLPAPER_CACHE ]]; then
+  gsutil ls gs://ryanpbrewster/wallpapers/bing > $WALLPAPER_CACHE
+fi
+
+WALLPAPER=$(shuf -n 1 $WALLPAPER_CACHE)
 gsutil cp $WALLPAPER /tmp/rpb-wallpaper
 feh --bg-scale /tmp/rpb-wallpaper
