@@ -131,3 +131,4 @@ bar {
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 1%+ # increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 1%- # decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # toggle sound
+bindsym XF86HomePage exec --no-startup-id ~/config/bin/rpb-wallpaper # swap to random new wallpaper
