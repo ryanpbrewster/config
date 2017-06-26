@@ -2,7 +2,7 @@
 
 WALLPAPER_CACHE=/tmp/rpb-wallpaper-cache
 if ! [[ -e $WALLPAPER_CACHE ]]; then
-  gsutil ls gs://ryanpbrewster/wallpapers/bing > $WALLPAPER_CACHE
+  gsutil ls gs://ryanpbrewster/wallpapers/chrome > $WALLPAPER_CACHE
 fi
 
 WALLPAPER=$(shuf -n 1 $WALLPAPER_CACHE)
