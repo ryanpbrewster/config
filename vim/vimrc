@@ -5,5 +5,3 @@ set shiftwidth=2
 set tabstop=2
 
 syntax enable
-let g:solarized_termcolors=256
-colorscheme solarized
