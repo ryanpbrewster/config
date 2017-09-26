@@ -27,6 +27,12 @@ def symlink(src, dest):
     print("symlinking {} to {}".format(src, dest))
     os.symlink(src, dest)
 
+def bash(config, home):
+    symlink(
+            "{}/bash/bashrc".format(config),
+            "{}/.bashrc".format(home))
+
+
 def git(config, home):
     symlink(
             "{}/git/gitconfig".format(config),
@@ -58,6 +64,7 @@ def main():
     config = os.path.dirname(os.path.abspath(__file__))
     home = os.environ["HOME"]
 
+    bash(config, home)
     git(config, home)
     i3(config, home)
     i3status(config, home)
