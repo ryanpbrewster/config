@@ -18,7 +18,7 @@ shopt -s no_empty_cmd_completion
 
 # set a fancy prompt
 PROMPT_COMMAND='PS1X=$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'
-PS1='\[\e[36m\]\u\[\e[m\]@\[\e[32m\]\h:${PS1X}\[\e[m\]\\$ '
+PS1='\[\e[1;32m\]\u@\h\[\e[m\]:\[\e[1;34m\]${PS1X}\[\e[m\]\\$ '
 
 # Commented out, don't overwrite xterm -T "title" -n "icontitle" by default.
 # If this is an xterm set the title to user@host:dir
