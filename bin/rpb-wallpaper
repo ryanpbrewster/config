@@ -8,5 +8,5 @@ if [[ ! -e $WALLPAPER_CACHE ]]; then
 fi
 
 WALLPAPER=$(shuf -n 1 $WALLPAPER_CACHE)
-mkdir -p /tmp/rpb-wallpaper && gsutil cp $WALLPAPER /tmp/rpb-wallpaper
+gsutil cp $WALLPAPER /tmp/rpb-wallpaper
 feh --bg-scale /tmp/rpb-wallpaper
