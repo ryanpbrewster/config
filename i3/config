@@ -125,3 +125,5 @@ bar {
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 1%+ # increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 1%- # decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle # toggle sound
+
+exec /usr/bin/setxkbmap -option "caps:swapescape"
