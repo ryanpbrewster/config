@@ -3,7 +3,7 @@
 set -e -u
 
 WALLPAPER_CACHE=/tmp/rpb-wallpaper-cache
-if [[ ! -e $WALLPAPER_CACHE ]]; then
+if [[ ! -s $WALLPAPER_CACHE ]]; then
   gsutil ls gs://ryanpbrewster/wallpapers/chrome > $WALLPAPER_CACHE
 fi
 
