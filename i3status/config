@@ -11,6 +11,12 @@ general {
   interval = 1
 }
 
+order += "battery all"
+battery all {
+  format = "[B] %percentage"
+  integer_battery_capacity = true
+}
+
 order += "volume master"
 volume master {
         format = "♪: %volume"
