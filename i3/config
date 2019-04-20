@@ -136,3 +136,5 @@ bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle # toggle so
 #  EndSection
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease brightness
+
+exec /usr/bin/setxkbmap -option "caps:swapescape"
