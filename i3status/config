@@ -13,7 +13,7 @@ general {
 
 order += "battery all"
 battery all {
-  format = "[B] %percentage"
+  format = "⚡: %percentage"
   integer_battery_capacity = true
 }
 
