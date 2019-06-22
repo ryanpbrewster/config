@@ -11,6 +11,18 @@ general {
   interval = 1
 }
 
+order += "battery all"
+battery all {
+  format = "%status %percentage"
+  format_down = "No battery"
+  status_chr = "⚡ CHR"
+  status_bat = "🔋 BAT"
+  status_unk = "? UNK"
+  status_full = "☻ FULL"
+  low_threshold = 10
+  integer_battery_capacity = true
+}
+
 order += "volume master"
 volume master {
         format = "♪: %volume"
