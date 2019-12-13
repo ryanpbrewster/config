@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+import base64
+import sys
+
+segments = sys.stdin.read().strip().split(".")
+assert len(segments) == 3
+
+header = base64.b64decode(segments[0].encode("utf8")).decode("utf8")
+print(header)
+payload = base64.b64decode(segments[1].encode("utf8")).decode("utf8")
+print(payload)
