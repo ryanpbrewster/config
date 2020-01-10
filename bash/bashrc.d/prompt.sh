@@ -1,4 +1,4 @@
-COLOR=$(python <<EOH
+COLOR=$(python3 <<EOH
 import hashlib
 import socket
 colors = [
@@ -19,7 +19,7 @@ colors = [
   96,
   97,
 ]
-n = int(hashlib.sha256(socket.gethostname()).hexdigest(), 16)
+n = int(hashlib.sha256(socket.gethostname().encode("utf8")).hexdigest(), 16)
 print(colors[n % len(colors)])
 EOH
 )

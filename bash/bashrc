@@ -1,30 +1,5 @@
-# System-wide .bashrc file for interactive bash(1) shells.
-# $Id: //depot/google3/googledata/corp/puppet/goobuntu/common/modules/shell/files/bash/bash.bashrc#5 $
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# check that a cached command exists before executing, so symlinks in
-# /usr/local/symlinks can be removed safely. See http://b/3314121
-shopt -s checkhash
-
-# Prevent TAB from completing an empty command line. This avoids the delay and
-# the request to show 4000+ options.
-shopt -s no_empty_cmd_completion
-
-# Commented out, don't overwrite xterm -T "title" -n "icontitle" by default.
-# If this is an xterm set the title to user@host:dir
-#case "$TERM" in
-#xterm*|rxvt*)
-#    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-#    ;;
-#*)
-#    ;;
-#esac
 
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
@@ -34,49 +9,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# if the command-not-found package is installed, use it
-if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-not-found ]; then
-  function command_not_found_handle {
-    # check because c-n-f could've been removed in the meantime
-    if [ -x /usr/lib/command-not-found ]; then
-      /usr/lib/command-not-found -- "$1"
-      return $?
-    elif [ -x /usr/share/command-not-found/command-not-found ]; then
-      /usr/share/command-not-found/command-not-found -- "$1"
-      return $?
-    else
-      printf "%s: command not found\n" "$1" >&2
-      return 127
-    fi
-  }
-fi
-
-# Check if a file/directory is writable by other. b/6955145
-function check_permission_and_fix() {
-  file="$1"
-  perms=$(stat --dereference --format '0%a' "$file" 2> /dev/null)
-  if [[ -n "$perms" ]] ; then
-    if (( "$perms" & 0002 )); then
-      chmod -f o-w "$file"
-      echo "warning: $file was mode $perms, removed world writable" >&2
-    fi
-    if (( "$perms" & 0020 )); then
-      chmod -f g-w "$file"
-      echo "warning: $file was mode $perms, removed group writable" >&2
-    fi
-  fi
-}
-
-if [[ -n "${EUID}" ]] && [ "${EUID}" -ge 1000 ]; then
-  for file in "${HOME}" "${HOME}"/.bashrc "${HOME}"/.bash_profile; do
-    check_permission_and_fix "${file}"
-  done
-fi
-unset check_permission_and_fix
-unset file
-unset perms
-
 
 if [ -d $HOME/config/bash/bashrc.d ]; then
   for i in $HOME/config/bash/bashrc.d/*.sh; do
