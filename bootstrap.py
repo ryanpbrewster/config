@@ -48,6 +48,11 @@ def i3status(config, home):
             "{}/i3status/config".format(config),
             "{}/.config/i3status/config".format(home))
 
+def tmux(config, home):
+    symlink(
+            "{}/tmux/tmux.conf".format(config),
+            "{}/.tmux.conf".format(home))
+
 def vim(config, home):
     symlink(
             "{}/vim/vimrc".format(config),
@@ -65,6 +70,7 @@ def main():
     git(config, home)
     i3(config, home)
     i3status(config, home)
+    tmux(config, home)
     vim(config, home)
 
     print("done!")
