@@ -1,0 +1,6 @@
+[submodule "vim/pack/start/rust.vim"]
+	path = vim/pack/plugins/start/rust.vim
+	url = git@github.com:rust-lang/rust.vim.git
+[submodule "vim/pack/plugins/start/rust.vim"]
+	path = vim/pack/plugins/start/rust.vim
+	url = git@github.com:rust-lang/rust.vim.git
