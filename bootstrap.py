@@ -61,6 +61,11 @@ def vim(config, home):
             "{}/vim/pack".format(config),
             "{}/.vim/pack".format(home))
 
+def zsh(config, home):
+    symlink(
+            "{}/zsh/zshrc".format(config),
+            "{}/.zshrc".format(home))
+
 def main():
     global FLAGS
     print("Starting boostrap...")
@@ -75,6 +80,7 @@ def main():
     i3status(config, home)
     tmux(config, home)
     vim(config, home)
+    zsh(config, home)
 
     print("done!")
 
