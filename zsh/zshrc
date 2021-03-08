@@ -2,7 +2,7 @@
 [ -z "$PS1" ] && return
 
 if [ -d $HOME/config/zsh/zshrc.d ]; then
-  for i in $HOME/config/zsh/zshrc.d/*.sh; do
+  for i in $HOME/config/zsh/zshrc.d/*; do
     if [ -r $i ]; then
       . $i
     fi
