@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gcloud config set project $(gcloud projects list --format=json | jq --raw-output '.[].projectId' | fzf)

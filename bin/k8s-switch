@@ -1,0 +1,3 @@
+#!/bin/sh
+
+kubectl config use-context $(kubectl config view --output=jsonpath='{range .users[*]}{.name}{"\n"}{end}' | fzf)
