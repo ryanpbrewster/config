@@ -11,3 +11,7 @@
   default = current
 [core]
   editor = vim
+[pull]
+  ff = only
+[init]
+  defaultBranch = master
