@@ -12,7 +12,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -138,3 +138,4 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2 # increase br
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2 # decrease brightness
 
 exec /usr/bin/setxkbmap -option "caps:swapescape"
+exec /usr/bin/xrandr --size 1920x1200
