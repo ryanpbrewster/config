@@ -138,4 +138,4 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2 # increase br
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2 # decrease brightness
 
 exec /usr/bin/setxkbmap -option "caps:swapescape"
-exec /usr/bin/xrandr --size 1920x1200
+exec /usr/bin/xrandr --output eDP-1 --size 1920x1200

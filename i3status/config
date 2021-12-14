@@ -40,6 +40,6 @@ tztime utc {
 
 order += "tztime local"
 tztime local {
-  format = "PST %Y-%m-%d %H:%M:%S"
-  timezone = "America/Los_Angeles"
+  format = "ET %Y-%m-%d %H:%M:%S"
+  timezone = "America/New_York"
 }
