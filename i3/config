@@ -124,7 +124,10 @@ bar {
 # Control volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 1%+ # increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 1%- # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle # toggle sound
+bindsym XF86AudioMute exec --no-startup-id amixer sset Master mute # mute sound
+# amixer seems to be toggling mute weirdly. `sset Master mute` seems to disable both the `Master`
+# and the `Speaker` devices, so to re-enable sound we need to unmute both.
+bindsym Shift+XF86AudioMute exec --no-startup-id amixer sset Master unmute && amixer sset Speaker unmute # unmute sound
 
 # Control brightness
 # Note: I had to add this to /etc/X11/xorg.conf in order to make this work.
@@ -134,8 +137,8 @@ bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle # toggle so
 #  Driver      "intel"
 #  Option      "Backlight"  "intel_backlight"
 #  EndSection
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2 # increase brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2 # decrease brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease brightness
 
 exec /usr/bin/setxkbmap -option "caps:swapescape"
 exec /usr/bin/xrandr --output eDP-1 --size 1920x1200
