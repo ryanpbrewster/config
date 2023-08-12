@@ -2,7 +2,7 @@
 
 set -eux
 
-branches_to_delete=$(git branch | fzf --multi)
+branches_to_delete=$(git branch --format '%(refname:short)' | fzf --multi)
 if [ -n "$branches_to_delete" ]; then 
   git branch --delete --force $branches_to_delete
 fi
